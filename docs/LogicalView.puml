@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/class-diagram
+protocol      ActivityMain.xml
+class MainActivity {
+  calculate()
+}
+
+class Calculator {
+  result
+  calculate(token)
+}
+
+ActivityMain.xml --> "[0-9*/+.-]" MainActivity
+MainActivity o--> Calculator
+@enduml

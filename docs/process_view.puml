@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/state-diagram
+[*] --> InitialState
+InitialState: result = 0
+InitialState: Operation{arity, parameters, operate()}
+State Number {
+  InitialState --> Integer: decimal=[0-9];result=10*result+decimal
+  Integer --> Integer: decimal=[0-9];result=10*result+decimal
+  Point --> Float: decimal=[0-9];result = decimal
+  Float --> Float: decimal=[0-9];result *= 10
+  InitialState --> Point: .
+}
+
+Integer --> Operation: operator
+Integer --> InitialState
+Float --> Operation: operator: result = result
+
+InitialState --> InitialState: \=, *, /, -, +, AC
+InitialState --> O
+@enduml

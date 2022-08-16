@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.sanchezcarlosjr.calculator.CalculatorViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteY="343dp"
+                tools:layout_editor_absoluteX="-16dp"
+                android:id="@+id/linearLayout">
+
+            <TextView
+                    android:layout_width="375dp"
+                    android:layout_height="65dp"
+                    android:id="@+id/expression"
+                    android:layout_marginTop="80dp"
+                    android:textSize="60sp"
+                    android:text="@{viewmodel.expression}"
+                    android:textAlignment="viewEnd"
+                    android:layout_marginStart="16dp" />
+
+            <TextView
+                    android:text="@{Float.toString(viewmodel.result)}"
+                    android:layout_width="375dp"
+                    android:layout_height="65dp"
+                    android:id="@+id/result"
+                    android:textSize="40sp"
+                    android:textAlignment="textEnd"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginStart="16dp" />
+
+            <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="13.5sp">
+
+                    <Button
+                            android:text="AC"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/AC"
+                            android:layout_marginRight="13dp"
+                            android:textSize="35dp"
+                            android:onClick="@{() -> viewmodel.calculate(`AC`)}"
+                            android:layout_width="wrap_content" />
+
+                    <Button
+                            android:text="√"
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/sqrt"
+                            android:textSize="35dp"
+                            android:onClick="@{() -> viewmodel.calculate(`sqrt`)}"
+                            android:layout_marginRight="13dp" />
+
+                    <Button
+                            android:text="%"
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/mod"
+                            android:textSize="35dp"
+                            android:onClick="@{() -> viewmodel.calculate(`mod`)}"
+                            android:layout_marginRight="13dp" />
+                    <Button
+                            android:text="÷"
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/division"
+                            android:onClick="@{() -> viewmodel.calculate(`div`)}"
+                            android:textSize="35dp" />
+                </TableRow>
+
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="13.5sp">
+
+                    <Button
+                            android:text="7"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/seven"
+                            android:layout_marginRight="13dp"
+                            android:textSize="35dp"
+                            android:onClick="@{() -> viewmodel.calculate(7)}"
+                            android:layout_width="85dp" />
+
+                    <Button
+                            android:text="8"
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/eight"
+                            android:textSize="35dp"
+                            android:onClick="@{() -> viewmodel.calculate(8)}"
+                            android:layout_marginRight="13dp" />
+
+                    <Button
+                            android:text="9"
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/nine"
+                            android:textSize="35dp"
+                            android:onClick="@{() -> viewmodel.calculate(9)}"
+                            android:layout_marginRight="13dp" />
+
+                    <Button
+                            android:text="*"
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/times"
+                            android:onClick="@{() -> viewmodel.calculate(`*`)}"
+                            android:textSize="35dp" />
+                </TableRow>
+
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="13.5sp">
+
+                    <Button
+                            android:text="4"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/four"
+                            android:layout_marginRight="13dp"
+                            android:textSize="35dp"
+                            android:layout_width="85dp" />
+
+                    <Button
+                            android:text="5"
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/five"
+                            android:textSize="35dp"
+                            android:onClick="@{() -> viewmodel.calculate(5)}"
+                            android:layout_marginRight="13dp" />
+
+                    <Button
+                            android:text="6"
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/six"
+                            android:textSize="35dp"
+                            android:layout_marginRight="13dp" />
+
+                    <Button
+                            android:text="-"
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/minus"
+                            android:textSize="35dp" />
+                </TableRow>
+
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="13.5sp">
+
+                    <Button
+                            android:text="1"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/one"
+                            android:layout_marginRight="13dp"
+                            android:textSize="35dp"
+                            android:onClick="@{() -> viewmodel.calculate(1)}"
+                            android:layout_width="85dp" />
+
+                    <Button
+                            android:text="2"
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/two"
+                            android:textSize="35dp"
+                            android:onClick="@{() -> viewmodel.calculate(2)}"
+                            android:layout_marginRight="13dp" />
+
+                    <Button
+                            android:text="3"
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/three"
+                            android:textSize="35dp"
+                            android:onClick="@{() -> viewmodel.calculate(3)}"
+                            android:layout_marginRight="13dp" />
+
+                    <Button
+                            android:text="+"
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/plus"
+                            android:onClick="@{() -> viewmodel.calculate(`+`)}"
+                            android:textSize="35dp" />
+
+                </TableRow>
+
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="13.5sp">
+
+                    <Button
+                            android:text="0"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/zero"
+                            android:layout_marginRight="13dp"
+                            android:textSize="35dp"
+                            android:onClick="@{() -> viewmodel.calculate(0)}"
+                            android:layout_width="85dp" />
+
+                    <Button
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/button"
+                            android:textSize="35dp"
+                            android:layout_marginRight="13dp" />
+
+                    <Button
+                            android:text="."
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/point"
+                            android:textSize="35dp"
+                            android:onClick="@{() -> viewmodel.calculate(`.`)}"
+                            android:layout_marginRight="13dp" />
+
+                    <Button
+                            android:text="="
+                            android:layout_width="85dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/equals"
+                            android:onClick="@{() -> viewmodel.calculate(`=`)}"
+                            android:textSize="35dp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
