@@ -33,7 +33,7 @@
                     android:layout_marginStart="16dp" />
 
             <TextView
-                    android:text="@{Float.toString(viewmodel.result)}"
+                    android:text="@{viewmodel.result.toString()}"
                     android:layout_width="375dp"
                     android:layout_height="65dp"
                     android:id="@+id/result"
@@ -57,7 +57,7 @@
                             android:id="@+id/AC"
                             android:layout_marginRight="13dp"
                             android:textSize="35dp"
-                            android:onClick="@{() -> viewmodel.calculate(`AC`)}"
+                            android:onClick="@{() -> viewmodel.stream(`A`)}"
                             android:layout_width="wrap_content" />
 
                     <Button
@@ -66,7 +66,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/sqrt"
                             android:textSize="35dp"
-                            android:onClick="@{() -> viewmodel.calculate(`sqrt`)}"
+                            android:onClick="@{() -> viewmodel.stream(`S`)}"
                             android:layout_marginRight="13dp" />
 
                     <Button
@@ -75,14 +75,14 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/mod"
                             android:textSize="35dp"
-                            android:onClick="@{() -> viewmodel.calculate(`mod`)}"
+                            android:onClick="@{() -> viewmodel.stream(`%`)}"
                             android:layout_marginRight="13dp" />
                     <Button
                             android:text="÷"
                             android:layout_width="85dp"
                             android:layout_height="wrap_content"
                             android:id="@+id/division"
-                            android:onClick="@{() -> viewmodel.calculate(`div`)}"
+                            android:onClick="@{() -> viewmodel.stream(`/`)}"
                             android:textSize="35dp" />
                 </TableRow>
 
@@ -97,7 +97,7 @@
                             android:id="@+id/seven"
                             android:layout_marginRight="13dp"
                             android:textSize="35dp"
-                            android:onClick="@{() -> viewmodel.calculate(7)}"
+                            android:onClick="@{() -> viewmodel.stream(`7`)}"
                             android:layout_width="85dp" />
 
                     <Button
@@ -106,7 +106,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/eight"
                             android:textSize="35dp"
-                            android:onClick="@{() -> viewmodel.calculate(8)}"
+                            android:onClick="@{() -> viewmodel.stream(`8`)}"
                             android:layout_marginRight="13dp" />
 
                     <Button
@@ -115,7 +115,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/nine"
                             android:textSize="35dp"
-                            android:onClick="@{() -> viewmodel.calculate(9)}"
+                            android:onClick="@{() -> viewmodel.stream(`9`)}"
                             android:layout_marginRight="13dp" />
 
                     <Button
@@ -123,7 +123,7 @@
                             android:layout_width="85dp"
                             android:layout_height="wrap_content"
                             android:id="@+id/times"
-                            android:onClick="@{() -> viewmodel.calculate(`*`)}"
+                            android:onClick="@{() -> viewmodel.stream(`*`)}"
                             android:textSize="35dp" />
                 </TableRow>
 
@@ -146,7 +146,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/five"
                             android:textSize="35dp"
-                            android:onClick="@{() -> viewmodel.calculate(5)}"
+                            android:onClick="@{() -> viewmodel.stream(`5`)}"
                             android:layout_marginRight="13dp" />
 
                     <Button
@@ -176,7 +176,7 @@
                             android:id="@+id/one"
                             android:layout_marginRight="13dp"
                             android:textSize="35dp"
-                            android:onClick="@{() -> viewmodel.calculate(1)}"
+                            android:onClick="@{() -> viewmodel.stream(`1`)}"
                             android:layout_width="85dp" />
 
                     <Button
@@ -185,7 +185,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/two"
                             android:textSize="35dp"
-                            android:onClick="@{() -> viewmodel.calculate(2)}"
+                            android:onClick="@{() -> viewmodel.stream(`2`)}"
                             android:layout_marginRight="13dp" />
 
                     <Button
@@ -194,7 +194,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/three"
                             android:textSize="35dp"
-                            android:onClick="@{() -> viewmodel.calculate(3)}"
+                            android:onClick="@{() -> viewmodel.stream(`3`)}"
                             android:layout_marginRight="13dp" />
 
                     <Button
@@ -202,7 +202,7 @@
                             android:layout_width="85dp"
                             android:layout_height="wrap_content"
                             android:id="@+id/plus"
-                            android:onClick="@{() -> viewmodel.calculate(`+`)}"
+                            android:onClick="@{() -> viewmodel.stream(`+`)}"
                             android:textSize="35dp" />
 
                 </TableRow>
@@ -218,7 +218,7 @@
                             android:id="@+id/zero"
                             android:layout_marginRight="13dp"
                             android:textSize="35dp"
-                            android:onClick="@{() -> viewmodel.calculate(0)}"
+                            android:onClick="@{() -> viewmodel.stream(`0`)}"
                             android:layout_width="85dp" />
 
                     <Button
@@ -234,7 +234,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/point"
                             android:textSize="35dp"
-                            android:onClick="@{() -> viewmodel.calculate(`.`)}"
+                            android:onClick="@{() -> viewmodel.stream(`.`)}"
                             android:layout_marginRight="13dp" />
 
                     <Button
@@ -242,7 +242,7 @@
                             android:layout_width="85dp"
                             android:layout_height="wrap_content"
                             android:id="@+id/equals"
-                            android:onClick="@{() -> viewmodel.calculate(`=`)}"
+                            android:onClick="@{() -> viewmodel.stream(`=`)}"
                             android:textSize="35dp" />
 
                 </TableRow>
